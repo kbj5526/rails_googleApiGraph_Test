@@ -1,0 +1,44 @@
+// Place all the styles related to the accesses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#myChart{
+    width: 400px !important;
+    height: 200px !important;
+}
+
+.flex,
+.flex-graph,
+.remote-flex{
+    display: flex;
+}
+
+.flame{
+    position: relative;
+}
+
+.center-title{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flame .highcharts-container ,
+.flame .highcharts-root{
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.highcharts-title{
+    font-size: 32px !important;
+}
+
+a.graph-link{
+    cursor: pointer;
+    color: black;
+}
+
+a.graph-link:hover{
+    color: blue;
+}

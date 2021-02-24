@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LazyHighChartSample</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src='https://code.highcharts.com/highcharts.js'></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <%= include_gon %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

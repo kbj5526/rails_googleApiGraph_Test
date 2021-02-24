@@ -1,0 +1,44 @@
+<h1>Accesses#index</h1>
+
+<%= form_with scope: :search, class: "search", method: :get, local: true do |search| %>
+    <table class="search-table">
+        <tr>
+            <th>期間</th>
+        </tr>
+        <tr>
+            <td><%= search.date_field :join_from, value: @search_params[:join_from] %></td>
+            <td>〜</td>
+            <td><%= search.date_field :join_to, value: @search_params[:join_to] %></td>
+            <td><%= button_tag "検索", type: "submit", id: "searchSubmit" %></td>
+        </tr>
+    </table>
+<% end %>
+
+<div class="flex">
+    <div class="flame">
+        <%= link_to("/accesses/1/access", remote: true, class: "graph-link") do %>
+        <label id="container" width="300" height="200"></label>
+        <span class="center-title"><%= @user_device %><span>
+        <% end %>
+    </div>
+    <div class="flame">
+        <%= link_to("/accesses/2/access", remote: true, class: "graph-link") do %>
+        <label id="page"></label>
+        <span class="center-title"><%= @application_device %><span>
+        <% end %>
+    </div>
+</div>
+
+<div class="flex-graph">
+    <div id="graph"> 
+        <%= high_chart("my_chart", @chart_line) %>
+    </div>
+    <div id="stickGraph">
+        <%= high_chart("stick", @chart_stick) %>
+    </div>
+</div>
+
+<div id="accessGraph"></div>
+
+<div id="regions_div" style="width: 900px; height: 500px;"></div>
+
